@@ -20,6 +20,5 @@ var server = http.createServer(async function (request, response) {
     response.end(message);
 });
 
-// 让服务器监听8080端口:
-server.listen(443);
+server.listen(process.env.PORT);
 console.log('listening')
