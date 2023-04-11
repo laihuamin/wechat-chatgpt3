@@ -1,6 +1,7 @@
 import { WechatyBuilder } from "wechaty";
 import QRCode from "qrcode";
 import { ChatGPTBot } from "./bot.js";
+import './service.js';
 const chatGPTBot = new ChatGPTBot();
 
 const bot =  WechatyBuilder.build({
