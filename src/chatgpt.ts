@@ -3,7 +3,7 @@ import {config} from "./config.js";
 
 let apiKey = config.openai_api_key;
 let model = config.model;
-// console.log(apiKey, model, '>>>>>model');
+console.log(apiKey, model, '>>>>>model');
 const sendMessage = async (message: string) => {
   try {
     const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
