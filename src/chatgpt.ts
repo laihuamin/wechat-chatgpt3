@@ -1,7 +1,9 @@
 import {config} from "./config.js";
+// import fetch from 'node-fetch';
 
 let apiKey = config.openai_api_key;
 let model = config.model;
+// console.log(apiKey, model, '>>>>>model');
 const sendMessage = async (message: string) => {
   try {
     const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
@@ -21,10 +23,14 @@ const sendMessage = async (message: string) => {
         temperature: 0.6
       }),
     });
+    // console.log(response, '>>>>>response')
     return response.json()
-      .then((data) => data.choices[0].message.content);
+      .then((data) => {
+        console.log(data, '>>>>data');
+        return data.choices[0].message.content
+      });
   } catch (e) {
-    console.error(e)
+    console.log(e, '>>>e')
     return "Something went wrong"
   }
 }
